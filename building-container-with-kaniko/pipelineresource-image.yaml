@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: tekton-demo-hello-world-golang-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: index.docker.io/devopps/tekton-demo-hello-world-golang

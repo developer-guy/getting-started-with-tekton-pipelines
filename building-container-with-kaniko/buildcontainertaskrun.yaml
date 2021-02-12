@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: build-docker-image-from-git-source-task-run
+spec:
+  taskRef:
+    name: kaniko
+  params:
+    - name: IMAGE
+      value: devopps/tekton-demo-hello-world-golang:v1
+  resources:
+    inputs:
+      - name: docker-source
+        resourceRef:
+          name: tekton-demo-hello-world-golang-git
